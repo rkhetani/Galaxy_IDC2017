@@ -22,8 +22,6 @@ In order for you to be able to access Galaxy on your assigned dedicated machine 
 You will find the current IP address at the top of our [resource page](../resources). You will need it in order to access Galaxy from the web browser on your laptop. 
 {: .notice}
 
-> If you want to work through this session outside of this course, take a look at our section on [how to set up your own Galaxy server](../posts/running-your-own-galaxy-instance/) or download the [complete introduction dataset](../data/Galaxy_Introduction_files.tgz) (TGZ archive, 3MB) and use one of the public Galaxy instances.
-
 ## The Galaxy interface
 
 Before we get going on an analysis, let's start with exploring what a Galaxy instance actually looks like. Open up a web browser of your choice, and enter the web or IP address given to you during the course into the Address Bar and press ENTER. You should see the main Galaxy screen as shown below. This example was run using the Google Chrome web browser. This is the main `Analyze data` window where data analysis is performed. You should see something similar to the following screenshot. 
