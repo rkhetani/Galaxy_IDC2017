@@ -20,7 +20,6 @@ This first session will familiarize you with the system, and we will be using th
 In order for you to be able to access Galaxy on your assigned dedicated machine on the Cloud, you have been given a web or IP address in the form of A.B.C.D where A, B, C and D are numbers separated by dots. 
 
 You will find the current IP address at the top of our [resource page](../resources). You will need it in order to access Galaxy from the web browser on your laptop. 
-{: .notice}
 
 ## The Galaxy interface
 
@@ -37,23 +36,25 @@ The main page is composed of four primary sections:
 
 You should always remember **to log in to Galaxy** by clicking on the `User` menu item and `Log in` with your email address and password. If you are not already registered, take a moment to do so now. Click on the `User` menu item and `Register`  by filling out your email address, preferred password and a public name (all lowercase) by which you’d like to be identified to other users. Click `Submit` and Galaxy will automatically log you in to your new account. 
 
-Even though it is not required to run analyses, logging in with your account gives you much more power and functionality when it comes to managing histories and workflows. We’ll see this later on. Now that we’ve seen what the various panes do, let’s explore Galaxy with an actual analysis!
+Even though it is not required to run analyses, logging in with your account lets you name and save histories, so you can come back to the analysis later from any computer. Please note that every Galaxy instance is different and this login information is only for this class; so if you use the public galaxy instance, we encourage you to create an account there as well.
 
 ## Experimental dataset
-The dataset we are using is part of a larger study described in [Westermann AJ et al, Nature 2016](http://www.nature.com.ezp-prod1.hul.harvard.edu/nature/journal/v529/n7587/full/nature16547.html). In this paper the authors set out to understand the role of small regulatory RNAs (sRNAs) experssed by *Salmonella typhimurium* during host infection. Their goal was to use cutting-edge Sequence-based methods to "*discover how Salmonella sRNAs fine-tune gene expression in intracellular bacteria, with widespread consequences for the human host response.*"
+The dataset we are using is part of a larger study described in [Westermann AJ et al, Nature 2016](http://www.nature.com.ezp-prod1.hul.harvard.edu/nature/journal/v529/n7587/full/nature16547.html). In this paper the authors set out to understand the role of small regulatory RNAs (sRNAs) experssed by *Salmonella typhimurium* during host infection. Using cutting-edge RNA sequencing-based methods, the authors "*charted the dynamic RNA expression landscape of both a bacterial pathogen and its eukaryotic host during the course of infection.*"
 
-From this study we are using the 24h time point host RNA-Seq data for the RNA-Seq tutorial.
+From this study we are using the data from the 24h time point host RNA-Seq data, for the RNA-Seq tutorial. In our example analysis, our goal is to understand the gene expression differences in host expression between the infected (GFP+) and bystander (GFP−) HeLa-S3 cells after wild-type infection. In addition to these 2 sample categories, We will also include the mock infected bystander cells (GFP-) as a base control. We will be processing only 50,000 reads from each sample to enable the tools to finish processing the data in class. 
 
-## A workflow example
+## Analysis workflow
 
-In our example analysis, our goal will be to generate a list of potential eQTLs by finding SNPs within gene promoters. To keep things manageable, we'll restrict our search to short genes on the X-chromosome. To accomplish our goal we'll need to know a few things:
+Below is a standard workflow for the analysis. We will be performing steps 1 - 4, and breifly discussing 5 and 6.
 
-1. The genes on the X-chromosome and their genomic coordinates.
-2. The lengths of these genes; we'll use the number of exons as an approximate measure. 
-4. A list of SNPs and their genomic coordinates.
-3. The locations of the promoters of our genes; we'll define these as the regions just upstream of the genes' transcriptional start sites.
+1. Data import
+* QC (assess data metrics and improve quality)
+* Alignment to genome 
+* Counting reads associated with genes
+* Statistical analysis to obtain list of differentially expressed genes (not hands on)
+* Functional analysis (
 
-Some of these we can directly import into Galaxy, others we will calculate from within Galaxy itself. Let's start by importing a list of genes into Galaxy.
+You will learn about the tools for each step described above, and about various data types specific to genommic/sequencing data.
 
 ### Importing data into Galaxy
 
@@ -66,9 +67,8 @@ You can import data into Galaxy from a large variety of sources:
 We will start with first two, simpler, approaches to demonstrate the concepts.
 
 #### Shared Data libraries
-{: .no_toc}
 
-You can import data that has been shared with you by the Galaxy site maintainer or from another user. Data libraries[^1] are a convenient framework within Galaxy to store and share data. We will be making use of these today to provide you with sequencing data, intermediate results and other information. Lets start by importing a list of human gene identifiers and their genomic coordinates from the `Shared Data` section:
+You can import data that has been shared with you by the Galaxy site maintainer or from another user. Data libraries are a convenient framework within Galaxy to store and share data. We will be making use of these today to provide you with sequencing data and other information. Lets start by importing the raw FASTQ data from the `Shared Data` section:
  
 1. Click on `Shared Data` at the top of the page and navigate to `Data Libraries`,  `Galaxy Introduction`.
 2. Find and select the `UCSC Gene List hg18` dataset
