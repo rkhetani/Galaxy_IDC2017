@@ -10,7 +10,6 @@ Approximate time: 4 hours
 
 * Understand the theory for each step in the RNA-Seq workflow
 * Become familiar with the terminology and tools used in an RNA-Seq workflow
-* Be able to confidently communicate with bioinformaticians and understand RNA-Seq workflows in peer-reviewed literature
 
 [Galaxy](http://usegalaxy.org) is an integrated tool management system with a user-friendly graphical user interface (GUI). It is designed for running multiple bioinformatics tools on genomic data in a single point-and-click environment. In this tutorial we are going to get acquainted with Galaxy. If you are interested in learning more about the system or setting up your own copy we have provided additional links to online courses and public instances on the [resource page](/resources). 
 
