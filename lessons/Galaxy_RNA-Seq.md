@@ -130,30 +130,41 @@ We will be improving the overall read quality of these data by trimming off low-
 
 ### Alignment with HISAT2
 
-We will be using [HISAT2](https://ccb.jhu.edu/software/hisat2/index.shtml), the successor of TopHat for performing alignment on the trimmed FASTQ data today. The tool accepts a FASTQ file as input and outputs a BAM file. 
+We will be using [HISAT2](https://ccb.jhu.edu/software/hisat2/index.shtml), the successor of TopHat for performing alignment on the trimmed FASTQ data today. HISAT2 is a **splice-aware** aligner, i.e. it is able to align reads that span an intron. This is an important distinction between aligners for RNA versus DNA, eukaryotes versus prokaryotes. The tool accepts a FASTQ file and a genome index as input and outputs a BAM file. The genome index is a set of files that are created from the genome FASTA to make the alignment/matching run very quickly; we have generated this for the class already using the hg19 genome sequence.
+
+<img src="../img/hisat2.png" width="500" align="center">
 
 > SAM/BAM format: This is the standard alignment format, the SAM file is the human readable version of the BAM file. The SAM file is a tabular file, with columns that are separated by tabs; each column contains information about various things, e.g. where the read matches the genome, if there are any mismatches between the read and the genomic sequence, if the read maps to multiple locations and so on. They also contain numbers/flags to denote some of this information, like whether the read is mapped or not and so on.
 
-Once the alignment is completed, we will perform some of the following steps.
-
-* convert BAM to SAM (so we can take a look at the alignment information)
-* select only unmapped reads from the BAM
-* convert the BAM with unmapped reads to a FASTQ
-* align the FASTQ to the Salmonella genome
-
 #### Viewing alignment in SAM data (BAM to SAM)
+
+We will convert the BAM file to a SAM file so we can view the alignments. 
 
 <img src="../img/bam_to_sam.png" width="650" align="center">
 
-#### Convert from BAM to FASTQ
+> Note that SAM files are about 4 times as large as their corresponding BAMs, and they are not very useful for any downstream anaysis (or viewing large datasets). Hence, alignments are stored as BAM files only.
+
+#### Align unmapped reads to the Salmonella genome
+
+To align unmapped reads to the Salmonella genome, we have to perform the following steps:
+
+* select only unmapped reads from the BAM
 
 <img src="../img/filter_bam.png" width="650" align="center">
 
+* convert the BAM with unmapped reads to a FASTQ
+
 <img src="../img/sam_to_fastq.png" width="650" align="center">
 
+* align the FASTQ to the Salmonella genome
+
 > ** Exercise: Align to Salmonella genome**
+>
+> Get the fasta file from "Shared Data" => "Data Libraries" => "Additional Files" => 	"GCA_000210855.2_ASM21085v2_genomic.fna", and align using Bowtie2 (an aligner that is not-splice aware).
 
 ### Counting with FeatureCounts
+
+Let's go back to the BAM files from the HISAT alignment. We want to use these file to count the number of reads associated with known genes. To do this we will be using [featureCounts](), a tool that accepts a BAM
 
 <img src="../img/featurecounts.png" width="650" align="center">
 
