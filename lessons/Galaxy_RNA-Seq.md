@@ -143,23 +143,23 @@ Once the alignment is completed, we will perform some of the following steps.
 
 #### Viewing alignment in SAM data (BAM to SAM)
 
-<img src="../img/bam_to_sam.png" width="500" align="center">
+<img src="../img/bam_to_sam.png" width="650" align="center">
 
 #### Convert from BAM to FASTQ
 
-<img src="../img/filter_bam.png" width="500" align="center">
+<img src="../img/filter_bam.png" width="650" align="center">
 
-<img src="../img/sam_to_fastq.png" width="500" align="center">
+<img src="../img/sam_to_fastq.png" width="650" align="center">
 
 > ** Exercise: Align to Salmonella genome**
 
 ### Counting with FeatureCounts
 
-<img src="../img/featurecounts.png" width="500" align="center">
+<img src="../img/featurecounts.png" width="650" align="center">
 
 #### Combining counts to generate a Count Matrix
 
-<img src="../img/columnjoin.png" width="500" align="center">
+<img src="../img/columnjoin.png" width="650" align="center">
 
 ### DGE analysis
 
