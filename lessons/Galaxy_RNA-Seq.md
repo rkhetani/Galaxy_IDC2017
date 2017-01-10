@@ -82,11 +82,11 @@ We will be using the 1st option at this time. You can import data that has been 
 
 Go back to the main analysis page and you will find the 3 files in your current history, ready to use. 
 
-<img src="../img/history.png" width="600" align="center">
+<img src="../img/history.png" width="200" align="center">
 
 Click on the eye icon next to the name of one of the dataset. This will result in you being able to see the contents of the file in the middle panel.
 
-<img src="../img/fastq_entry.png" width="200" align="center">
+<img src="../img/view_data.png" width="500" align="center">
 
 ### Sequencing with Illumina and the FASTQ format
 
