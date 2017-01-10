@@ -124,13 +124,22 @@ Once all 3 are selected, press the Execute button. The program will take a few m
 
 We will be improving the overall read quality of these data by trimming off low-quality bases from the far end (3'). This will be done with the [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) tool. This tool will accept a fastq file as input and output a fastq file for downstream processing. We will be using the parameters as detailed in the screenshot below, and once again running it on all FASTQ files.
 
-<img src="../img/trimmomatic.png" width="600" align="center">
+<img src="../img/trimmomatic.png" width="500" align="center">
 
-> Trimming is only necessary when you are using an alignment-based counting method; tools like [Salmon]() and [Kallisto]() do not require trimming. 
+> Trimming is only necessary when you are using an alignment-based counting method; tools like [Salmon](http://salmon.readthedocs.io/en/latest/index.html) and [Kallisto](https://pachterlab.github.io/kallisto/about) do not require trimming. 
 
 ### Alignment with HISAT2
 
-### SAM/BAM format and data manipulation
+We will be using [HISAT2](https://ccb.jhu.edu/software/hisat2/index.shtml), the successor of TopHat for performing alignment on the trimmed FASTQ data today. The tool accepts a FASTQ file as input and outputs a BAM file. 
+
+> SAM/BAM format: This is the standard alignment format, the SAM file is the human readable version of the BAM file. The SAM file is a tabular file, with columns that are separated by tabs; each column contains information about various things, e.g. where the read matches the genome, if there are any mismatches between the read and the genomic sequence, if the read maps to multiple locations and so on. They also contain numbers/flags to denote some of this information, like whether the read is mapped or not and so on.
+
+Once the alignment is completed, we will perform some of the following steps.
+
+* convert BAM to SAM (so we can take a look at the alignment information)
+* select only unmapped reads from the BAM
+* convert the BAM with unmapped reads to a FASTQ
+* align the FASTQ to the Salmonella genome
 
 #### Viewing alignment in SAM data
 
