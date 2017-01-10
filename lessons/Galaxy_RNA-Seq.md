@@ -30,7 +30,7 @@ The main page is composed of four primary sections:
 
 1. The center page (orange) is where you will be viewing the data and entering parameter values when running tools. Now you don’t see anything because we haven’t loaded any data and we didn’t run any tools yet. 
 2. The left column (blue) is where all of the tools and commands are located, grouped by major headings. You will be selecting tools from here when loading and analyzing data. 
-3. The right column (green) is where a history of all the commands that were run are logged. The history is a very powerful feature of Galaxy which allows you to keep track of the steps that were undertaken from the very beginning of loading data, to the very last analysis step. We will see later on how to share your history with your collaborators and how to create workflows from them. Once again, the history is empty because we haven’t run any tools yet.  
+3. The right column (green) is where a history of all the commands that were runs are logged. The history is a very powerful feature of Galaxy which allows you to keep track of the steps that were undertaken from the very beginning of loading data, to the very last analysis step. We will see later on how to share your history with your collaborators and how to create workflows from them. Once again, the history is empty because we haven’t run any tools yet.  
 4. The very top of the window (red) contains several menus which allow you to move away from this main `Analyze data` page. You can move from one view to another without losing any of your data. We’ll be using some of the other Galaxy functionality offered here in future tutorials. 
 
 You should always remember **to log in to Galaxy** by clicking on the `User` menu item and `Log in` with your email address and password. If you are not already registered, take a moment to do so now. Click on the `User` menu item and `Register`  by filling out your email address, preferred password and a public name (all lowercase) by which you’d like to be identified to other users. Click `Submit` and Galaxy will automatically log you in to your new account. 
@@ -38,9 +38,9 @@ You should always remember **to log in to Galaxy** by clicking on the `User` men
 Even though it is not required to run analyses, logging in with your account lets you name and save histories, so you can come back to the analysis later from any computer. Please note that every Galaxy instance is different and this login information is only for this class; so if you use the public galaxy instance, we encourage you to create an account there as well.
 
 ## Experimental dataset
-The dataset we are using is part of a larger study described in [Westermann AJ et al, Nature 2016](http://www.nature.com.ezp-prod1.hul.harvard.edu/nature/journal/v529/n7587/full/nature16547.html). In this paper the authors set out to understand the role of small regulatory RNAs (sRNAs) experssed by *Salmonella typhimurium* during host infection. Using cutting-edge RNA sequencing-based methods, the authors "*charted the dynamic RNA expression landscape of both a bacterial pathogen and its eukaryotic host during the course of infection.*"
+The dataset we are using is part of a larger study described in [Westermann AJ et al, Nature 2016](http://www.nature.com.ezp-prod1.hul.harvard.edu/nature/journal/v529/n7587/full/nature16547.html). In this paper the authors set out to understand the role of small regulatory RNAs (sRNAs) expressed by *Salmonella typhimurium* during host infection. Using cutting-edge RNA sequencing-based methods, the authors "*charted the dynamic RNA expression landscape of both a bacterial pathogen and its eukaryotic host during the course of infection.*"
 
-From this study we are using the data from the 24h time point host RNA-Seq data, for the RNA-Seq tutorial. In our example analysis, our goal is to understand the gene expression differences in host expression between the infected (GFP+) and bystander (GFP−) HeLa-S3 cells after wild-type infection. In addition to these 2 sample categories, We will also include the mock infected bystander cells (GFP-) as a base control. We will be processing only 50,000 reads from each sample to enable the tools to finish processing the data in class. 
+From this study we are using the data from the 24h time point host RNA-Seq data, for the RNA-Seq tutorial. In our example analysis, our goal is to understand the gene expression differences in host expression between the infected (GFP+) and bystander (GFP−) HeLa-S3 cells after wild-type infection. In addition to these 2 sample categories, we will also include the mock-infected bystander cells (GFP-) as a base control. We will be processing only 50,000 reads from each sample to enable the tools to finish processing the data in class. 
 
 ## Analysis workflow
 
@@ -48,7 +48,7 @@ Below is a standard workflow for the analysis.
 
 <img src="../img/workflow_simple.png" width="500" align="center">
 
-We will be performing steps 1 - 4, and breifly discussing 5 and 6.
+We will be performing steps 1 - 4, and briefly discussing 5 and 6.
 
 1. Data import
 * QC (assess data metrics and improve quality)
@@ -57,7 +57,7 @@ We will be performing steps 1 - 4, and breifly discussing 5 and 6.
 * Statistical analysis to obtain list of differentially expressed genes (not hands on)
 * Functional analysis (links only)
 
-You will learn about the tools for each step described above, and about various data types specific to genommic/sequencing data.
+You will learn about the tools for each step described above, and about various data types specific to genomic/sequencing data.
 
 ### Importing data into Galaxy
 
@@ -141,9 +141,9 @@ Once the alignment run is finished, you can click on the name of the new dataset
 
 <img src="../img/bam_output.png" width="200" align="center">
 
-It is important to keep track of these number and make sure they look similar across all the samples in your experiment.
+It is important to keep track of these numbers and make sure they look similar across all the samples in your experiment.
 
-> SAM/BAM format: This is the standard alignment format, the SAM file is the human readable version of the BAM file. The SAM file is a tabular file, with columns that are separated by tabs; each column contains information about various things, e.g. where the read matches the genome, if there are any mismatches between the read and the genomic sequence, if the read maps to multiple locations and so on. They also contain numbers/flags to denote some of this information, like whether the read is mapped or not and so on.
+> SAM/BAM format: This is the standard alignment format; the SAM format is the human readable version of the BAM format. The SAM format is tabular and each column contains information about various things, e.g. where the read matches the genome, if there are any mismatches between the read and the genomic sequence, if the read maps to multiple locations and so on. They also contain numbers/flags to denote some of this information, like whether the read is mapped or not and so on.
 
 #### Viewing alignment in SAM data (BAM to SAM)
 
@@ -151,7 +151,7 @@ We will convert the BAM file to a SAM file using the *BAM-to-SAM* tool so we can
 
 <img src="../img/bam_to_sam.png" width="650" align="center">
 
-> Note that SAM files are about 4 times as large as their corresponding BAMs, and they are not very useful for any downstream anaysis (or viewing large datasets). Hence, alignments are stored as BAM files only.
+> Note that SAM files are about 4 times as large as their corresponding BAMs, and they are not very useful for any downstream analysis (or viewing large datasets). Hence, alignments are stored as BAM files only.
 
 #### Align unmapped reads to the Salmonella genome
 
