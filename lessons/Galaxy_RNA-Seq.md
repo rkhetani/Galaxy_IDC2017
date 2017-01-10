@@ -45,7 +45,11 @@ From this study we are using the data from the 24h time point host RNA-Seq data,
 
 ## Analysis workflow
 
-Below is a standard workflow for the analysis. We will be performing steps 1 - 4, and breifly discussing 5 and 6.
+Below is a standard workflow for the analysis. 
+
+<img src="../img/workflow_simple.png" width="500" align="center">
+
+We will be performing steps 1 - 4, and breifly discussing 5 and 6.
 
 1. Data import
 * QC (assess data metrics and improve quality)
@@ -134,11 +138,17 @@ We will be using [HISAT2](https://ccb.jhu.edu/software/hisat2/index.shtml), the 
 
 <img src="../img/hisat2.png" width="500" align="center">
 
+Once the alignment run is finished, you can click on the name of the new dataset in your history to get and idea of how many reads aligned.
+
+<img src="../img/bam_output.png" width="200" align="center">
+
+It is important to keep track of these number and make sure they look similar across all the samples in your experiment.
+
 > SAM/BAM format: This is the standard alignment format, the SAM file is the human readable version of the BAM file. The SAM file is a tabular file, with columns that are separated by tabs; each column contains information about various things, e.g. where the read matches the genome, if there are any mismatches between the read and the genomic sequence, if the read maps to multiple locations and so on. They also contain numbers/flags to denote some of this information, like whether the read is mapped or not and so on.
 
 #### Viewing alignment in SAM data (BAM to SAM)
 
-We will convert the BAM file to a SAM file so we can view the alignments. 
+We will convert the BAM file to a SAM file using the *BAM-to-SAM* tool so we can view the alignments. 
 
 <img src="../img/bam_to_sam.png" width="650" align="center">
 
@@ -148,37 +158,52 @@ We will convert the BAM file to a SAM file so we can view the alignments.
 
 To align unmapped reads to the Salmonella genome, we have to perform the following steps:
 
-* select only unmapped reads from the BAM
+* select only unmapped reads from the BAM using the *Filter SAM or BAM, output SAM or BAM* tool
 
 <img src="../img/filter_bam.png" width="650" align="center">
 
-* convert the BAM with unmapped reads to a FASTQ
+* convert the BAM with unmapped reads to a FASTQ using the *SamToFastq* tool
 
 <img src="../img/sam_to_fastq.png" width="650" align="center">
 
 * align the FASTQ to the Salmonella genome
 
-> ** Exercise: Align to Salmonella genome**
+> **Exercise: Align to Salmonella genome**
 >
-> Get the fasta file from "Shared Data" => "Data Libraries" => "Additional Files" => 	"GCA_000210855.2_ASM21085v2_genomic.fna", and align using Bowtie2 (an aligner that is not-splice aware).
+> Get the fasta file from `Shared Data` => `Data Libraries` => `Additional Files` => 	`GCA_000210855.2_ASM21085v2_genomic.fna`, and align using *Bowtie2* (an aligner that is not-splice aware).
 
 ### Counting with FeatureCounts
 
-Let's go back to the BAM files from the HISAT alignment. We want to use these file to count the number of reads associated with known genes. To do this we will be using [featureCounts](), a tool that accepts a BAM
+Let's go back to the BAM files from the HISAT alignment. We want to use these file to count the number of reads associated with known genes. To do this we will be using [featureCounts](http://bioinf.wehi.edu.au/featureCounts/), a tool that accepts a BAM file which has the coordinates where the read maps to the genome and an annotation file (GTF/GFF) that contains the coordinates of where the genes are on the genome. Based on overlaps between the coordinates from these files featureCounts will count the number of reads associated with each known gene. This tool is best used for gene-level counting and not for (splice) isoform-level counting; alignment-free counting methods work best for that.
 
 <img src="../img/featurecounts.png" width="650" align="center">
 
+> It is important to note that the genome and gene annotation files should have the same source, to ensure that the annotation file has the correct coordinates and your counts are accurate
+
 #### Combining counts to generate a Count Matrix
+
+The featureCounts tool on Galaxy can only process each bam file separately, as of now. If you were using it on the UNIX command line you will be able to generate a count matrix automatically. So, we need to use the Column Join tool to combine our 3 count files.
 
 <img src="../img/columnjoin.png" width="650" align="center">
 
-### DGE analysis
+### Differential Gene Expression (DGE) analysis
 
-#### On Galaxy
+To perform the DGE analysis we need to get the "full" count matrix from Shared Data. Unfortunately, we won't be performing this on Galaxy since it tends to be clunky. We will be giving you the code to run a simple comparison in R, so please download the matrix to your laptop.
 
-#### In R
+The tools that are commonly used for DGE are [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) and [EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), both are R-based tools. Both these tools require the raw counts as input and not normalized (TPM, RPKM, FPKM, etc.) counts. In addition, they are best used for gene-level differential analysis and not for (splice) isoform-level analysis. If you want to use alignment-free methods for counting, come talk to us about tools for DGE.
 
 ### Functional Analysis Tools
+
+Below I have listed some tools you might want to explore if you are interested in performing functional analysis with your list id differentially expressed genes.
+
+* [g:Profiler (ORA-based methods)](http://biit.cs.ut.ee/gprofiler/welcome.cgi)
+* [REVIGO](http://revigo.irb.hr/)
+* [GSEA (Functional Class Scoring)](http://software.broadinstitute.org/gsea/)
+* [GENEMANIA](http://www.genemania.org/)
+
+### Overall Workflow
+
+<img src="../img/workflow.png" width="500" align="center">
 
 ***
 *This lesson has been developed by members of the teaching team at the [Harvard Chan Bioinformatics Core (HBC)](http://bioinformatics.sph.harvard.edu/). These are open access materials distributed under the terms of the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.*
