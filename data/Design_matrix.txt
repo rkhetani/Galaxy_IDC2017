@@ -1,0 +1,10 @@
+sample-name	treatment
+HeLa-S3:WT_GFP_plus:24_h:R1	wt_gfp+
+HeLa-S3:WT_GFP_plus:24_h:R2	wt_gfp+
+HeLa-S3:WT_GFP_plus:24_h:R3	wt_gfp+
+HeLa-S3:WT_GFP_minus:24_h:R1	wt_gfp-
+HeLa-S3:WT_GFP_minus:24_h:R2	wt_gfp-
+HeLa-S3:WT_GFP_minus:24_h:R3	wt_gfp-
+HeLa-S3:mock_GFP_minus:24_h:R1	mock_gfp-
+HeLa-S3:mock_GFP_minus:24_h:R2	mock_gfp-
+HeLa-S3:mock_GFP_minus:24_h:R3	mock_gfp-
