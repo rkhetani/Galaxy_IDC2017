@@ -208,5 +208,9 @@ Below I have listed some tools you might want to explore if you are interested i
 
 We have some bioinformatics/RNA-Seq analysis resources [available here](https://wiki.harvard.edu/confluence/display/hbctraining/Resources), and feel free to contact us at [bioinformatics@hsph.harvard.edu](mailto:bioinformatics@hsph.harvard.edu) with any additional questions. 
 
+#### The need for UNIX
+
+If NGS analysis is part of your project, or if you are interested in developing your skills for NGS analysis, we encourage you to learn how to use the UNIX/Linux command line. It will open up to you compute resources, tools, parameters for tools and the ability to perform analysis much more efficiently. [Contact us](mailto:hbctraining@hsph.harvard.edu) for information about upcoming workshops.
+
 ***
 *This lesson has been developed by members of the teaching team at the [Harvard Chan Bioinformatics Core (HBC)](http://bioinformatics.sph.harvard.edu/). These are open access materials distributed under the terms of the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/) (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.*
