@@ -98,15 +98,35 @@ Raw data from Illumina is usually in this format. Each sequence has 4 lines of i
 
 The phred quality score is encoded as follows and it represents how well the base-calling program was able to identify a certain base:
 
-<img src="../img/phred.png" width="350" align="center">
+<img src="../img/phred.png" width="400" align="center">
 
-<img src="../img/phred2.png" width="350" align="center">
+<img src="../img/phred2.png" width="400" align="center">
 
 ### QC
 
-#### How good are these datasets
+#### How good are these datasets?
 
-#### How do we improve these datasets
+The first step in a quality control step is to determine how good or bad the quality is. The tool that is able to assess this for NGS data is called [FASTQ](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/). It goes through the FASTQ file and reports back information about several quality metrics.
+
+This is the first tool we will be using today! In the tool search box (left panel, on the top) enter "fastqc" and then click on the fastqc tool. This will display the tool parameters in the central panel.
+
+<img src="../img/fastqc.png" width="350" align="center">
+
+We want to select multiple files at once for this tool. So click on the button that represents multiple datasets and select all three files in the box (press command as you click through). 
+
+<img src="../img/fastqc_multiple.png" width="350" align="center">
+
+Once all 3 are selected, press the Execute button. The program will take a few minutes to run, and once it's done the grey/yellow data boxes will turn green. Click on the eye next to "FastQC on data 1: Webpage" to view the metrics for that dataset.
+
+<img src="../img/fastqc_metrics.png" width="350" align="center">
+
+#### How do we improve these datasets?
+
+We will be improving the overall read quality of these data by trimming off low-quality bases from the far end (3'). This will be done with the [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic) tool. This tool will accept a fastq file as input and output a fastq file for downstream processing. We will be using the parameters as detailed in the screenshot below, and once again running it on all FASTQ files.
+
+<img src="../img/trimmomatic.png" width="600" align="center">
+
+> Trimming is only necessary when you are using an alignment-based counting method; tools like [Salmon]() and [Kallisto]() do not require trimming. 
 
 ### Alignment with HISAT2
 
