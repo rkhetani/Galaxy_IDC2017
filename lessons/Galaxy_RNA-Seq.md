@@ -52,7 +52,7 @@ Below is a standard workflow for the analysis. We will be performing steps 1 - 4
 * Alignment to genome 
 * Counting reads associated with genes
 * Statistical analysis to obtain list of differentially expressed genes (not hands on)
-* Functional analysis (
+* Functional analysis (links only)
 
 You will learn about the tools for each step described above, and about various data types specific to genommic/sequencing data.
 
@@ -70,13 +70,19 @@ We will start with first two, simpler, approaches to demonstrate the concepts.
 
 You can import data that has been shared with you by the Galaxy site maintainer or from another user. Data libraries are a convenient framework within Galaxy to store and share data. We will be making use of these today to provide you with sequencing data and other information. Lets start by importing the raw FASTQ data from the `Shared Data` section:
  
-1. Click on `Shared Data` at the top of the page and navigate to `Data Libraries`,  `Galaxy Introduction`.
-2. Find and select the `UCSC Gene List hg18` dataset
-3. Import them into your current history by selecting `Import to current history` from the `For selected datasets:` menu near the bottom of the page and clicking the `Go`  button located immediately to the right.
+1. Click on `Shared Data` at the top of the page and navigate to `Data Libraries`,  `Fastq_files`
 
-![datalib](../img/GalaxyDataLib.png)
+<img src="../img/shared_data.png" width="200" align="center">
 
-![import](../img/GalaxyImport.png)
+<img src="../img/shared_data2.png" width="400" align="center">
+
+2. Select all 3 files
+
+<img src="../img/select_data.png" width="400" align="center">
+
+3. Import them into your current history by selecting the `to history` button at the top
+
+<img src="../img/import_data.png" width="200" align="center">
 
 Go back to the main analysis page and you will find the gene list file in your current history, ready to use. Click on the history name "UCSC Genes List hg18" to see a short summary showing that we’ve imported 66,803 regions together with a mini data view underneath. 
 
