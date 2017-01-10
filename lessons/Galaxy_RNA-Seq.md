@@ -42,9 +42,10 @@ You should always remember **to log in to Galaxy** by clicking on the `User` men
 Even though it is not required to run analyses, logging in with your account gives you much more power and functionality when it comes to managing histories and workflows. We’ll see this later on. Now that we’ve seen what the various panes do, let’s explore Galaxy with an actual analysis!
 
 ## Experimental dataset
-The dataset we are using is part of a larger study described in [Kenny PJ et al, Cell Rep 2014](http://www.ncbi.nlm.nih.gov/pubmed/25464849). The authors are investigating interactions between various genes involved in Fragile X syndrome, a disease in which there is aberrant production of the FMRP protein. FMRP has been linked to the microRNA pathway, as it has been shown to be involved in miRNA mediated translational suppression. **The authors sought to show that FMRP associates with the RNA helicase MOV10 for regulation of brain mRNAs.**
+The dataset we are using is part of a larger study described in [Westermann AJ et al, Nature 2016](http://www.nature.com.ezp-prod1.hul.harvard.edu/nature/journal/v529/n7587/full/nature16547.html). In this paper the authors set out to understand the role of small regulatory RNAs (sRNAs) experssed by *Salmonella typhimurium* during host infection. Their goal was to use cutting-edge Sequence-based methods to "*discover how Salmonella sRNAs fine-tune gene expression in intracellular bacteria, with widespread consequences for the human host response.*"
 
-From this study we are using the iCLIP data for this introduction to Galaxy, to learn about the Galaxy interface, bringing data into Galaxy, data manipulation, accessing, and for the RNA-Seq tutorial we will be using the RNA-Seq data from the same dataset.
+From this study we are using the 24h time point host RNA-Seq data for the RNA-Seq tutorial.
+
 ## A workflow example
 
 In our example analysis, our goal will be to generate a list of potential eQTLs by finding SNPs within gene promoters. To keep things manageable, we'll restrict our search to short genes on the X-chromosome. To accomplish our goal we'll need to know a few things:
