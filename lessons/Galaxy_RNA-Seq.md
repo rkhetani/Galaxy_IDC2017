@@ -64,11 +64,7 @@ You can import data into Galaxy from a large variety of sources:
 * uploaded from a local file on your machine
 * from numerous online data repositories 
 
-We will start with first two, simpler, approaches to demonstrate the concepts.
-
-#### Shared Data libraries
-
-You can import data that has been shared with you by the Galaxy site maintainer or from another user. Data libraries are a convenient framework within Galaxy to store and share data. We will be making use of these today to provide you with sequencing data and other information. Lets start by importing the raw FASTQ data from the `Shared Data` section:
+We will be using the 1st option at this time. You can import data that has been shared with you by the Galaxy site maintainer or from another user. Data libraries are a convenient framework within Galaxy to store and share data. We will be making use of these today to provide you with sequencing data and other information. Lets start by importing the raw FASTQ data from the `Shared Data` section:
  
 1] Click on `Shared Data` at the top of the page and navigate to `Data Libraries`,  `Fastq_files`
 
@@ -84,7 +80,27 @@ You can import data that has been shared with you by the Galaxy site maintainer 
 
 <img src="../img/import_data.png" width="400" align="center">
 
-Go back to the main analysis page and you will find the gene list file in your current history, ready to use. Click on the history name "UCSC Genes List hg18" to see a short summary showing that we’ve imported 66,803 regions together with a mini data view underneath. 
+Go back to the main analysis page and you will find the 3 files in your current history, ready to use. 
+
+<img src="../img/history.png" width="600" align="center">
+
+Click on the eye icon next to the name of one of the dataset. This will result in you being able to see the contents of the file in the middle panel.
+
+<img src="../img/fastq_entry.png" width="200" align="center">
+
+### Sequencing with Illumina and the FASTQ format
+
+Raw data from Illumina is usually in this format. Each sequence has 4 lines of information.
+
+<img src="../img/fastq_entry.png" width="500" align="center">
+
+<img src="../img/fastq_desc.png" width="500" align="center">
+
+The phred quality score is encoded as follows and it represents how well the base-calling program was able to identify a certain base:
+
+<img src="../img/phred.png" width="500" align="center">
+
+<img src="../img/phred2.png" width="500" align="center">
 
 #### Data details
 {:.no_toc}
