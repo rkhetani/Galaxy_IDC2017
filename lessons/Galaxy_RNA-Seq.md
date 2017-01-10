@@ -86,13 +86,13 @@ Go back to the main analysis page and you will find the 3 files in your current 
 
 Click on the eye icon next to the name of one of the dataset. This will result in you being able to see the contents of the file in the middle panel.
 
-<img src="../img/view_data.png" width="500" align="center">
+<img src="../img/view_data.png" width="600" align="center">
 
 ### Sequencing with Illumina and the FASTQ format
 
 Raw data from Illumina is usually in this format. Each sequence has 4 lines of information.
 
-<img src="../img/fastq_entry.png" width="500" align="center">
+<img src="../img/fastq_entry.png" width="700" align="center">
 
 <img src="../img/fastq_desc.png" width="500" align="center">
 
