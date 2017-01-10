@@ -110,7 +110,7 @@ The first step in a quality control step is to determine how good or bad the qua
 
 This is the first tool we will be using today! In the tool search box (left panel, on the top) enter "fastqc" and then click on the fastqc tool. This will display the tool parameters in the central panel.
 
-<img src="../img/fastqc.png" width="350" align="center">
+<img src="../img/fastqc.png" width="600" align="center">
 
 We want to select multiple files at once for this tool. So click on the button that represents multiple datasets and select all three files in the box (press command as you click through). 
 
@@ -118,7 +118,7 @@ We want to select multiple files at once for this tool. So click on the button t
 
 Once all 3 are selected, press the Execute button. The program will take a few minutes to run, and once it's done the grey/yellow data boxes will turn green. Click on the eye next to "FastQC on data 1: Webpage" to view the metrics for that dataset.
 
-<img src="../img/fastqc_metrics.png" width="350" align="center">
+<img src="../img/fastqc_metrics.png" width="200" align="center">
 
 #### How do we improve these datasets?
 
