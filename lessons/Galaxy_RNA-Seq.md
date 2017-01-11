@@ -111,7 +111,7 @@ The phred quality score is encoded as follows and it represents how well the bas
 
 #### How good are these datasets?
 
-The first step in a quality control step is to determine how good or bad the data quality is. The tool that is able to assess this for NGS data is called [FASTQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/). It goes through the FASTQ file and reports back information about several quality metrics.
+The first step in a quality control step is to determine how good or bad the data quality is. The tool that is able to assess this for NGS data is called [FastQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/). It goes through the FASTQ file and reports back information about several quality metrics.
 
 This is the first tool we will be using today! In the tool search box (left panel, on the top) enter "fastqc" and then click on the fastqc tool. This will display the tool parameters in the central panel.
 
@@ -124,6 +124,8 @@ We want to select multiple files at once for this tool. So click on the button t
 Once all 3 are selected, press the Execute button. The program will take a few minutes to run, and once it's done the grey/yellow data boxes will turn green. Click on the eye next to "FastQC on data 1: Webpage" to view the metrics for that dataset.
 
 <img src="../img/fastqc_metrics.png" width="200" align="center">
+
+You can find more information about what each of these metrics are measuring how the thresholds are set on [the FastQCdocumentation page](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/). In addition, [this page](https://www.dropbox.com/s/zlan0qb6ooeuhyx/casim_2015_bloopers.pptx?dl=0) has some examples of how sequencing experiments can go wrong.
 
 #### How do we improve these datasets?
 
