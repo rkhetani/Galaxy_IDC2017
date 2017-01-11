@@ -125,7 +125,7 @@ Once all 3 are selected, press the Execute button. The program will take a few m
 
 <img src="../img/fastqc_metrics.png" width="200" align="center">
 
-You can find more information about what each of these metrics are measuring how the thresholds are set on [the FastQCdocumentation page](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/). In addition, [this page](https://www.dropbox.com/s/zlan0qb6ooeuhyx/casim_2015_bloopers.pptx?dl=0) has some examples of how sequencing experiments can go wrong.
+You can find more information about what each of these metrics are measuring how the thresholds are set on [the FastQC documentation page](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/). In addition, [this page](https://www.dropbox.com/s/zlan0qb6ooeuhyx/casim_2015_bloopers.pptx?dl=0) has some examples of how sequencing experiments can go wrong.
 
 #### How do we improve these datasets?
 
