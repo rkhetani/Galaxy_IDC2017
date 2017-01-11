@@ -50,13 +50,13 @@ Below is a standard workflow for the analysis.
 
 <img src="../img/workflow_simple.png" width="500" align="center">
 
-We will be performing steps 1 - 4, and briefly discussing 5 and 6.
+For today's class I have listed the steps below; will be performing steps 1 - 4 and briefly discussing step 5 and 6:
 
-1. Data import
+1. Data import (for Galaxy)
 * QC (assess data metrics and improve quality)
-* Alignment to genome 
+* Splice-aware mapping to genome (alignment)
 * Counting reads associated with genes
-* Statistical analysis to obtain list of differentially expressed genes (not hands on)
+* Statistical analysis to identify differentially expressed genes (not hands on)
 * Functional analysis (links only)
 
 You will learn about the tools for each step described above, and about various data types specific to genomic/sequencing data.
