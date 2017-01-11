@@ -20,20 +20,20 @@ This morning, we’ll see how to access Galaxy from your machine, get oriented a
 
 In order for you to be able to access Galaxy on your assigned dedicated machine on the Cloud, you have been given a web or IP address in the form of A.B.C.D where A, B, C and D are numbers separated by dots. 
 
-[http://52.91.17.164/](http://52.91.17.164/)
+[http://52.91.17.164/](http://52.91.17.164/) 
 
 ## The Galaxy interface
 
-Before we get going on an analysis, let's start with exploring what a Galaxy instance actually looks like. Open up a web browser of your choice, and enter the web or IP address given to you during the course into the Address Bar and press ENTER. You should see the main Galaxy screen as shown below. This example was run using the Google Chrome web browser. This is the main `Analyze data` window where data analysis is performed. You should see something similar to the following screenshot. 
+Before we get going on an analysis, let's start with exploring what the Galaxy interface looks like. Open up a web browser of your choice, other than *Internet Explorer*, and go to the above web address. You should see the main Galaxy screen as shown below. This is the main `Analyze data` window where data analysis is performed. You should see something similar to the following screenshot. 
 
 ![overview](../img/GalaxyOverview.png)
 
 The main page is composed of four primary sections:
 
-1. The center page (orange) is where you will be viewing the data and entering parameter values when running tools. Now you don’t see anything because we haven’t loaded any data and we didn’t run any tools yet. 
-2. The left column (blue) is where all of the tools and commands are located, grouped by major headings. You will be selecting tools from here when loading and analyzing data. 
-3. The right column (green) is where a history of all the commands that were runs are logged. The history is a very powerful feature of Galaxy which allows you to keep track of the steps that were undertaken from the very beginning of loading data, to the very last analysis step. We will see later on how to share your history with your collaborators and how to create workflows from them. Once again, the history is empty because we haven’t run any tools yet.  
-4. The very top of the window (red) contains several menus which allow you to move away from this main `Analyze data` page. You can move from one view to another without losing any of your data. We’ll be using some of the other Galaxy functionality offered here in future tutorials. 
+1. The center panel is where you will be viewing the data and entering parameter values when running tools. You don’t see anything now because we haven’t loaded any data, and we didn’t run any tools yet. 
+2. The left column is the tools panel, tools are grouped by topic/activities. You will be selecting tools from here when loading and analyzing data. 
+3. The right column is where a history of all the commands that were runs are logged, and where you can access all the data you are working with. The history is a very powerful feature of Galaxy which allows you to keep track of the steps that were undertaken from the very beginning of loading data, to the very last analysis step. You can think of a history as an project folder, and try to keep it organized. Once again, the history is empty because we haven’t brought in any data and haven't run any tools.  
+4. The very top of the window contains several menus which allow you to move away from this main `Analyze data` page. You can move from one view to another without losing any of your data.
 
 You should always remember **to log in to Galaxy** by clicking on the `User` menu item and `Log in` with your email address and password. If you are not already registered, take a moment to do so now. Click on the `User` menu item and `Register`  by filling out your email address, preferred password and a public name (all lowercase) by which you’d like to be identified to other users. Click `Submit` and Galaxy will automatically log you in to your new account. 
 
