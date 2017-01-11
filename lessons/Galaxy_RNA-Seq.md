@@ -137,7 +137,9 @@ We will be improving the overall read quality of these data by trimming off low-
 
 ### Alignment with HISAT2
 
-We will be using [HISAT2](https://ccb.jhu.edu/software/hisat2/index.shtml), the successor of TopHat for performing alignment on the trimmed FASTQ data today. HISAT2 is a **splice-aware** aligner, i.e. it is able to align reads that span an intron. This is an important distinction between aligners for RNA versus DNA, eukaryotes versus prokaryotes. The tool accepts a FASTQ file and a genome index as input and outputs a BAM file. The genome index is a set of files that are created from the genome FASTA to make the alignment/matching run very quickly; we have generated this for the class already using the hg19 genome sequence.
+We will be using [HISAT2](https://ccb.jhu.edu/software/hisat2/index.shtml), the successor of TopHat for performing alignment on the trimmed FASTQ data today. HISAT2 is a **splice-aware** aligner, i.e. it is able to align reads that span an intron. This is an important distinction between aligners for RNA versus DNA, eukaryotes versus prokaryotes. There are several splice-aware aligners out there and they have different resource requirements, e.g. the [STAR aligner](https://www.ncbi.nlm.nih.gov/pubmed/23104886) is memory intensive, but very fast whereas TopHat was much slower and required much less memory. HISAT2 is somewhere in the middle for memory and speed. 
+
+HISAT2 tool accepts a FASTQ file and a genome index as input and outputs a BAM file. The genome index is a set of files that are created from the genome FASTA to make the alignment/matching run very quickly; we have generated this for the class already using the hg19 genome sequence.
 
 <img src="../img/hisat2.png" width="500" align="center">
 
