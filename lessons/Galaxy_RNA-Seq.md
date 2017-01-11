@@ -111,7 +111,7 @@ The phred quality score is encoded as follows and it represents how well the bas
 
 #### How good are these datasets?
 
-The first step in a quality control step is to determine how good or bad the quality is. The tool that is able to assess this for NGS data is called [FASTQ](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/). It goes through the FASTQ file and reports back information about several quality metrics.
+The first step in a quality control step is to determine how good or bad the data quality is. The tool that is able to assess this for NGS data is called [FASTQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/). It goes through the FASTQ file and reports back information about several quality metrics.
 
 This is the first tool we will be using today! In the tool search box (left panel, on the top) enter "fastqc" and then click on the fastqc tool. This will display the tool parameters in the central panel.
 
