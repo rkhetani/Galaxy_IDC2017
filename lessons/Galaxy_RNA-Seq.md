@@ -20,6 +20,8 @@ This morning, we’ll see how to access Galaxy from your machine, get oriented a
 
 In order for you to be able to access Galaxy on your assigned dedicated machine on the Cloud, you have been given a web or IP address in the form of A.B.C.D where A, B, C and D are numbers separated by dots. 
 
+[http://52.91.17.164/](http://52.91.17.164/)
+
 ## The Galaxy interface
 
 Before we get going on an analysis, let's start with exploring what a Galaxy instance actually looks like. Open up a web browser of your choice, and enter the web or IP address given to you during the course into the Address Bar and press ENTER. You should see the main Galaxy screen as shown below. This example was run using the Google Chrome web browser. This is the main `Analyze data` window where data analysis is performed. You should see something similar to the following screenshot. 
