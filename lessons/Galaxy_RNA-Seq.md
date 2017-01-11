@@ -193,9 +193,9 @@ The featureCounts tool on Galaxy can only process each bam file separately, as o
 
 ### Differential Gene Expression (DGE) analysis
 
-To perform the DGE analysis we need to get the "full" count matrix from Shared Data. Unfortunately, we won't be performing this on Galaxy since it tends to be clunky. We will be giving you the code to run a simple comparison in R, so please download the matrix to your laptop.
+To perform the DGE analysis we need to get the "full" count matrix from Shared Data.The tools that are commonly used for DGE are [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) and [EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), both are R-based tools. Both these tools require the raw counts as input and not normalized (TPM, RPKM, FPKM, etc.) counts. In addition, they are best used for gene-level differential analysis and not for (splice) isoform-level analysis. If you want to use alignment-free methods for counting, come talk to us about tools for DGE.
 
-The tools that are commonly used for DGE are [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) and [EdgeR](https://bioconductor.org/packages/release/bioc/html/edgeR.html), both are R-based tools. Both these tools require the raw counts as input and not normalized (TPM, RPKM, FPKM, etc.) counts. In addition, they are best used for gene-level differential analysis and not for (splice) isoform-level analysis. If you want to use alignment-free methods for counting, come talk to us about tools for DGE.
+Unfortunately, we won't be performing this on Galaxy since it tends to be clunky. We have the R code to run a simple comparison, you can download the folder with the data and code [from here](http://tinyurl.com/idc-dge-zip); we will be going over it at the end of the day, if time permits.
 
 ### Functional Analysis Tools
 
